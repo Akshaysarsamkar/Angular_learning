@@ -1,0 +1,30 @@
+<div class="table-wrapper">
+    <table class="user-table">
+        <thead>
+            <tr>
+                <th>Sr No</th>
+                <th>Name</th>
+                <th>Company</th>
+                <th>QueryParams</th>
+                <th>RouterParams</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of userInfo(); let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.companyName }}</td>
+                <td>
+                    <button class="action-btn" (click)="seeProfile(user.id)">
+                        Show Info
+                    </button>
+                </td>
+                <td>
+                    <button class="action-btn" (click)="seeProfileWithRouteParams(user.id)">
+                        Show Info
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global reset and layout fixes */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Inter, system-ui, Segoe UI, Roboto, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Prevent horizontal overflow from flex children */
+.app-layout {
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.app-layout main {
+    min-width: 0;
+}
+
+/* Utility: make scrollbars appear only when needed */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+}

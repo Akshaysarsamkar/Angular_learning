@@ -1,0 +1,66 @@
+.table-wrapper {
+    margin: 30px;
+    padding: 20px;
+    background: #0f1724;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+    overflow-x: auto;
+}
+
+/* Table */
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #e5e7eb;
+    font-size: 14px;
+}
+
+/* Header */
+.user-table thead {
+    background: #111827;
+}
+
+.user-table th {
+    padding: 16px;
+    text-align: left;
+    font-weight: 600;
+    color: #9ca3af;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Body */
+.user-table td {
+    padding: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Row Hover */
+.user-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.user-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+/* Action Button */
+.action-btn {
+    padding: 6px 14px;
+    border-radius: 8px;
+    border: none;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    background: linear-gradient(90deg, #4f46e5, #6366f1);
+    color: #ffffff;
+    transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(79, 70, 229, 0.4);
+}
+
+.action-btn:active {
+    transform: scale(0.95);
+}

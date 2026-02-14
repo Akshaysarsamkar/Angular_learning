@@ -1,0 +1,34 @@
+<nav class="sidenav" [class.collapsed]="!showExpanded" aria-label="Primary">
+    <header class="sidenav__header">
+        <button class="toggler" (click)="toggle()" aria-label="Toggle sidenav">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden>
+                <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </button>
+        <div class="brand" *ngIf="showExpanded">My App</div>
+    </header>
+
+    <ul class="sidenav__menu">
+        <li class="sidenav__item" routerLink="form" routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }">
+            <span class="sidenav__label" *ngIf="showExpanded">Form</span>
+        </li>
+
+        <li class="sidenav__item" routerLink="signal" routerLinkActive="active">
+            <span class="sidenav__label" *ngIf="showExpanded">Signal</span>
+        </li>
+
+        <li class="sidenav__item" routerLink="observable" routerLinkActive="active">
+            <span class="sidenav__label" *ngIf="showExpanded">Observable</span>
+        </li>
+
+        <li class="sidenav__item" routerLink="services" routerLinkActive="active">
+            <span class="sidenav__label" *ngIf="showExpanded">Services</span>
+        </li>
+
+        <li class="sidenav__item" routerLink="routing" routerLinkActive="active">
+            <span class="sidenav__label" *ngIf="showExpanded">Routing</span>
+        </li>
+    </ul>
+</nav>

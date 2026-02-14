@@ -1,0 +1,117 @@
+/* Sidenavbar - expandable with toggle */
+:host {
+    display: block;
+}
+
+.sidenav {
+    --expanded-w: 220px;
+    --collapsed-w: 64px;
+    background: linear-gradient(180deg, #0f1724 0%, #0b1530 100%);
+    color: #fff;
+    width: var(--expanded-w);
+    height: 100vh;
+    padding: 12px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: width 220ms cubic-bezier(.2, .8, .2, 1), box-shadow 220ms;
+    box-shadow: 0 2px 20px rgba(2, 6, 23, 0.45);
+    overflow: auto;
+    /* allow internal scrolling when content is taller than viewport */
+}
+
+.sidenav__item.active {
+    background: linear-gradient(90deg, #4f46e5, #6366f1);
+    color: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.35);
+}
+
+.sidenav__item.active .sidenav__label,
+.sidenav__item.active .sidenav__icon {
+    color: #ffffff;
+}
+
+.sidenav.collapsed {
+    width: var(--collapsed-w);
+}
+
+.sidenav__header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.toggler {
+    background: transparent;
+    border: 0;
+    color: #d1d5db;
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.toggler:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.brand {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.sidenav__menu {
+    list-style: none;
+    padding: 6px 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sidenav__item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px;
+    border-radius: 8px;
+    color: #e6eef8;
+    cursor: pointer;
+    transition: background 160ms, transform 120ms;
+}
+
+.sidenav__item:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.sidenav__icon {
+    font-size: 1.1rem;
+    width: 28px;
+    text-align: center;
+}
+
+.sidenav__label {
+    font-size: 0.95rem;
+    opacity: 1;
+    transition: opacity 150ms;
+}
+
+.sidenav__footer {
+    margin-top: auto;
+    color: #94a3b8;
+    font-size: 0.8rem;
+}
+
+/* responsive tweak for small screens */
+@media (max-width: 640px) {
+    .sidenav {
+        position: fixed;
+        z-index: 30;
+        height: 100vh;
+    }
+}
